@@ -11,6 +11,8 @@ SINGLE_BAGPACK = '../dataset/initial/combined/bagpacks/B0046/B0046_0002.png'
 def main():
     images = imread_collection(BAGPACKS_PATH)
 
+    all_thresholds(images[0])
+
     for (image, name) in zip(images, images.files):
         threshed_image = minimum_threshold(image)
         save_image(name.replace("initial", "preprocessed"), threshed_image)
